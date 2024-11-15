@@ -2,24 +2,6 @@ import os
 import pickle
 
 import pandas as pd
-import numpy as np
-import spacy
-import re
-
-import nltk
-from nltk.tokenize import word_tokenize
-
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-#from xgboost import XGBClassifier
-
-#nltk.download('punkt_tab')
-#nltk.download('stopwords')
-#nltk.download('wordnet')
-#nltk.download('omw-1.4')
-#print(nltk.data.path)
-
 
 def load_from_pickle(path):
    if os.path.exists(path):
