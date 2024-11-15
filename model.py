@@ -16,8 +16,9 @@ from xgboost import XGBClassifier
 
 nltk.download('punkt_tab')
 nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('omw-1.4')
+#nltk.download('wordnet')
+#nltk.download('omw-1.4')
+#print(nltk.data.path)
 
 nlp = spacy.load('en_core_web_sm',  disable=["parser", "ner"])
 
