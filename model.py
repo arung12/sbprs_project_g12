@@ -5,7 +5,7 @@ import pandas as pd
 
 import nltk
 # Download necessary NLTK resources
-nltk.download('punkt')
+nltk.download('punkt_tab')
 
 def load_from_pickle(path):
    if os.path.exists(path):
