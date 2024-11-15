@@ -3,6 +3,10 @@ import pickle
 
 import pandas as pd
 
+import nltk
+# Download necessary NLTK resources
+nltk.download('punkt')
+
 def load_from_pickle(path):
    if os.path.exists(path):
        return pickle.load(open(path,'rb'))
