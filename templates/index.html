@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Product Recommendation App</h1>
+        <form method="POST">
+            <label for="username">Choose a Username:</label>
+            <select id="username" name="username" required>
+                <option value="" disabled selected>Select a user</option>
+                {% for user in users %}
+                    <option value="{{ user }}">{{ user }}</option>
+                {% endfor %}
+            </select>            
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if recommended_products %}
+            <div class="recommended-products">
+                <h2>Recommended Products for {{ request.form.username }}:</h2>
+                <div class="product-grid">
+                    {% for product in recommended_products %}
+                        <div class="product-tile">
+                            <div class="product-info">
+                                <h3>{{ product.name }}</h3>
+                                <p>{{ product.description }}</p>
+                                <div>${{ product.price }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
