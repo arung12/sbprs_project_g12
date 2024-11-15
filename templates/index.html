@@ -28,9 +28,10 @@
                     {% for product in recommended_products %}
                         <div class="product-tile">
                             <div class="product-info">
-                                <h3>{{ product.name }}</h3>
-                                <p>{{ product.description }}</p>
-                                <div>${{ product.price }}</div>
+                                <h3>{{ product.name}}</h3>
+                                <p>{{ product.categories}}</p>
+                                <p>{{ product.manufacturer}}</p>
+                                <div>{{ product.brand }}</div>
                             </div>
                         </div>
                     {% endfor %}
