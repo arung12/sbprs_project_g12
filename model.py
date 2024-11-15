@@ -14,13 +14,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 #from xgboost import XGBClassifier
 
-nltk.download('punkt_tab')
+#nltk.download('punkt_tab')
 #nltk.download('stopwords')
 #nltk.download('wordnet')
 #nltk.download('omw-1.4')
 #print(nltk.data.path)
 
-#nlp = spacy.load('en_core_web_sm',  disable=["parser", "ner"])
 
 def load_from_pickle(path):
    if os.path.exists(path):
@@ -33,28 +32,6 @@ tfidf_vectorizer = load_from_pickle('pickle_files/tfidf_vectorizer.pkl')
 model = load_from_pickle('pickle_files/model_final.pkl')
 recommendation_matrix = load_from_pickle('pickle_files/user_final_rating.pkl')
 products_data = load_from_pickle('pickle_files/products_data.pkl')
-
-"""
-def pre_process_text(text):
-    #converting text to lower
-    text = text.lower()
-
-    #removing any punctuation character by selecting anything other than word and space
-    text = re.sub(r'[^\w\s]',"",text)
-
-    #removing the promotion message
-    text = re.sub(r'This review was collected as part of a promotion', '', text)
-    
-    #removing stop words and extrating lemma
-    tokens = nlp(text)
-    text = [token.lemma_ for token in tokens if not token.is_stop]
-
-    #removing spaces at the front and end
-    text = ' '.join(text)
-    text = text.strip()
-
-    return text
-"""
 
 def get_popular_users():
     user_popularity = recommendation_matrix.sum(axis=1)
