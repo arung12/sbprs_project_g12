@@ -12,15 +12,15 @@ from nltk.tokenize import word_tokenize
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
-from xgboost import XGBClassifier
+#from xgboost import XGBClassifier
 
 nltk.download('punkt_tab')
-nltk.download('stopwords')
+#nltk.download('stopwords')
 #nltk.download('wordnet')
 #nltk.download('omw-1.4')
 #print(nltk.data.path)
 
-nlp = spacy.load('en_core_web_sm',  disable=["parser", "ner"])
+#nlp = spacy.load('en_core_web_sm',  disable=["parser", "ner"])
 
 def load_from_pickle(path):
    if os.path.exists(path):
@@ -34,6 +34,7 @@ model = load_from_pickle('pickle_files/model_final.pkl')
 recommendation_matrix = load_from_pickle('pickle_files/user_final_rating.pkl')
 products_data = load_from_pickle('pickle_files/products_data.pkl')
 
+"""
 def pre_process_text(text):
     #converting text to lower
     text = text.lower()
@@ -53,6 +54,7 @@ def pre_process_text(text):
     text = text.strip()
 
     return text
+"""
 
 def get_popular_users():
     user_popularity = recommendation_matrix.sum(axis=1)

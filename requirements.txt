@@ -1,12 +1,10 @@
 Flask==3.1.0
 gunicorn==20.1.0
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl#sha256=1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85
-nltk==3.9.1
+nltk==3.9.1 --only-binary nltk
 
 # Use only binary wheels
 numpy==2.0.2 --only-binary numpy
 pandas==2.2.3 --only-binary pandas
 scikit-learn==1.5.2 --only-binary scikit-learn
-scipy==1.14.1 --only-binary scipy
-spacy==3.8.2 --only-binary spacy
-xgboost==2.1.2 --only-binary xgboost
+
