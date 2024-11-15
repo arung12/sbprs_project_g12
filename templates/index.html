@@ -5,25 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Recommendation</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-   
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the Product Recommendation App</h1>
+        <h1>Sentiment Based Product Recommendation App</h1>
         <form method="POST">
             <label for="username">Choose a Username:</label>
-            <select id="username" name="username" required>
-                <option value="" disabled selected>Select a user</option>
+            <select id="username" name="username" required onchange="toggleInputField()">
+                <option value="{{ username }}" disabled selected>{{ username }} </option>
                 {% for user in users %}
                     <option value="{{ user }}">{{ user }}</option>
                 {% endfor %}
-            </select>            
+            </select>  
+            <div class="input-wrapper" id="customInputWrapper" style="display: none;">
+                <label for="customUsername" id="customLabel" >Enter Custom Username:</label>
+                <input type="text" id="customInput" name="customUsername" placeholder="Enter custom username">
+            </div>          
             <button type="submit">Submit</button>
         </form>
 
-        {% if recommended_products %}
+        {% if username is none or username == '' %}
+          <h2>Please select a user.</h2>
+        {% elif recommended_products %}
             <div class="recommended-products">
-                <h2>Recommended Products for {{ request.form.username }}:</h2>
+                <h2>Recommended Products for {{ username }}:</h2>
                 <div class="product-grid">
                     {% for product in recommended_products %}
                         <div class="product-tile">
@@ -37,6 +43,8 @@
                     {% endfor %}
                 </div>
             </div>
+        {% else %}
+            <h2>No recommendations available for {{ username }}.</h2>
         {% endif %}
     </div>
 </body>
