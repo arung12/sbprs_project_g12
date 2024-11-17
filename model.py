@@ -17,7 +17,7 @@ def load_from_pickle(path):
 tfidf_vectorizer = load_from_pickle('pickle_files/tfidf_vectorizer.pkl')
 model = load_from_pickle('pickle_files/model_final.pkl')
 recommendation_matrix = load_from_pickle('pickle_files/user_final_rating.pkl')
-products_data = load_from_pickle('pickle_files/products_data.pkl')
+products_data = load_from_pickle('pickle_files/products_cleaned_data.pkl')
 
 def get_popular_users():
     user_popularity = recommendation_matrix.sum(axis=1)
