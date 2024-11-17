@@ -1,9 +1,9 @@
-Flask==3.1.0
+Flask==3.0.3
 gunicorn==20.1.0
-nltk==3.9.1 --only-binary nltk
 
-# Use only binary wheels
-numpy==2.0.2 --only-binary numpy
-pandas==2.2.3 --only-binary pandas
-scikit-learn==1.5.2 --only-binary scikit-learn
-
+nltk==3.6.7 --only-binary nltk
+numpy==1.22.2 --only-binary numpy
+pandas==1.4.3 --only-binary pandas
+scikit-learn==0.23.2 --only-binary scikit-learn
+#xgboost==1.5.0
+#spacy==2.3.7
