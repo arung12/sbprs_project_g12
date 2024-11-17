@@ -1,9 +1,9 @@
 Flask==3.1.0
 gunicorn==20.1.0
 
-nltk
-numpy
-pandas
-scikit-learn
-#xgboost
-#spacy
+nltk==3.6.7 --only-binary nltk
+numpy==1.22.2 --only-binary numpy
+pandas==1.4.3 --only-binary pandas
+scikit-learn==0.23.2 --only-binary scikit-learn
+#xgboost==1.5.0
+#spacy==2.3.7
